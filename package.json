@@ -10,7 +10,7 @@
 		"test": "NODE_ENV=test sequelize-cli db:migrate && jest test -i tests/user.test.js --watch",
 		"run:dev": "NODE_ENV=development sequelize-cli db:migrate && node server.js",
 		"lint": "eslint ./",
-		"start": "sequelize-cli db:migrate && node server.js"
+		"start": "npx sequelize-cli db:migrate && node server.js"
 	},
 	"dependencies": {
 		"bcrypt": "^5.0.1",
@@ -20,6 +20,7 @@
 		"jsonwebtoken": "^8.5.1",
 		"multer": "^1.4.3",
 		"sequelize": "^6.9.0",
+		"sequelize-cli": "^6.6.2",
 		"short-uuid": "^4.2.0",
 		"sqlite3": "^5.0.2"
 	},
@@ -31,7 +32,7 @@
 		"eslint-plugin-import": "^2.25.3",
 		"jest": "^27.3.1",
 		"pg": "^8.13.1",
-		"sequelize-cli": "^6.3.0",
+		"sequelize-cli": "^6.6.2",
 		"sequelize-fixtures": "^1.2.0",
 		"superagent": "^6.1.0",
 		"supertest": "^6.1.6"
