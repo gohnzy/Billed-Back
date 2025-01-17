@@ -14,12 +14,18 @@ app.use(helmet());
 app.use(express.json());
 app.use('/public', express.static('public'));
 app.get('/', (req, res) => {
-  res.status(200).send('Bill app backend API v1');
+	res.status(200).send('Bill app backend API v1');
 });
 app.use(authMiddleware);
 app.use(upload.single('file'));
 app.use('/auth', authRoute);
 app.use('/users', userRoute);
 app.use('/bills', billRoute);
+const PORT = process.env.PORT || 3000; // Utilise 3000 par défaut en local
 
+app.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}`);
+});
+
+module.exports = app;
 module.exports = app;
