@@ -1,6 +1,7 @@
 const app = require('./app');
 
-app.listen(5678, () => {
-  // eslint-disable-next-line no-console
-  console.log('Example app listening on port 5678!');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+	// eslint-disable-next-line no-console
+	console.log('Example app listening on port 5678!');
 });

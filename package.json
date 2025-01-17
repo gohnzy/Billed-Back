@@ -10,7 +10,7 @@
 		"test": "NODE_ENV=test sequelize-cli db:migrate && jest test -i tests/user.test.js --watch",
 		"run:dev": "NODE_ENV=development sequelize-cli db:migrate && node server.js",
 		"lint": "eslint ./",
-		"start": "npx sequelize-cli db:migrate && node server.js"
+		"start": "npm install --force && npx sequelize-cli db:migrate && node server.js"
 	},
 	"dependencies": {
 		"bcrypt": "^5.0.1",
