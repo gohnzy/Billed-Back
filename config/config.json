@@ -1,25 +1,28 @@
 {
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "sqlite",
-    "storage": "./database_dev.sqlite"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "dialect": "sqlite",
-    "storage": "./database_test.sqlite"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "sqlite",
-    "storage": "./database_prod.sqlite"
-  }
+	"development": {
+		"username": "root",
+		"password": null,
+		"database": "database_development",
+		"host": "127.0.0.1",
+		"dialect": "sqlite",
+		"storage": "./database_dev.sqlite"
+	},
+	"test": {
+		"username": "root",
+		"password": null,
+		"database": "database_test",
+		"dialect": "sqlite",
+		"storage": "./database_test.sqlite"
+	},
+	"production": {
+		"dialect": "postgres",
+		"host": "db.ierbsrtaoqofyvormvqr.supabase.co",
+		"username": "postgres",
+		"password": "HKJ7z2d8bRh!she",
+		"database": "postgres",
+		"port": 5432,
+		"dialectOptions": {
+			"ssl": { "rejectUnauthorized": false }
+		}
+	}
 }

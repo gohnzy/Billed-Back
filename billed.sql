@@ -1,0 +1,22 @@
+
+BEGIN TRANSACTION;
+CREATE TABLE "SequelizeMeta" ("name" VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY);
+INSERT INTO SequelizeMeta VALUES('20211104111744-create-user.js');
+INSERT INTO SequelizeMeta VALUES('20211104120303-create-bill.js');
+CREATE TABLE "Users" ("id" INTEGER PRIMARY KEY , "name" VARCHAR(255), "email" VARCHAR(255), "type" VARCHAR(255), "password" VARCHAR(255), "status" VARCHAR(255), "key" VARCHAR(255), "createdAt" DATETIME NOT NULL, "updatedAt" DATETIME NOT NULL);
+INSERT INTO Users VALUES(1,'employee','employee@test.tld','Employee','$2b$10$8dXNkSLOvCOiGfuu5TSeKO/olqxTX5lQVqPvC9nTZfRmu2IRnazKO','connected','uoaRkMFrV67MKweoga5T3j','2021-11-20 10:50:52.929 +00:00','2024-12-16 16:52:58.527 +00:00');
+INSERT INTO Users VALUES(2,'admin','admin@test.tld','Admin','$2b$10$IhfPi8qvCVD21lKeOvNgx.xdxFTJjHgWSn5jtY6LPSamCzvmseZ0m','connected','29hUAGWbj3F9eaW4D7PvE1','2021-11-20 10:54:47.394 +00:00','2024-12-16 16:52:34.812 +00:00');
+INSERT INTO Users VALUES(3,'employee','employee@company.test','Employee','$2b$10$.iyo2Ye2vE/CGpKAQPQQfufdK9aSXY98MFXmqZRV1.//sYvSFHeXS','connected','6yUbmvvusnfjfRZ4ar8f1Y','2021-11-20 11:06:47.394 +00:00','2021-11-20 11:06:47.508 +00:00');
+INSERT INTO Users VALUES(4,'admin','admin@company.tld','Admin','$2b$10$rERfsB9Dz/Co8XobKwAa4uaCSzq1hsimo4pau9WvdauHmnrMNVN6C','connected','fAhwNAEqrDAFs7MP46y5zx','2021-11-20 11:11:31.964 +00:00','2021-11-20 11:11:32.074 +00:00');
+INSERT INTO Users VALUES(5,'thomas','thomas@facadia.com','Employee','$2b$10$PSXC2/C9n63UCgJAv3.Oxe/cWK0nuhGSsw0BnnJObph8eelCRFpnq','connected','jFvewuWcR86DTfCRPuxNje','2024-04-19 15:40:22.539 +00:00','2024-05-22 17:16:23.029 +00:00');
+INSERT INTO Users VALUES(6,'john','john@jo.c','Employee','$2b$10$Ghjpt/AwZ3iCkd5KQbUyxuTbmbcN.jayoqEYZcYcBH3cvkpJfmAm6','connected','4Ysnj5kSWbiQEg5Xdvy5HZ','2024-04-19 15:41:39.558 +00:00','2024-04-19 15:41:39.613 +00:00');
+CREATE TABLE "Bills" ("id" INTEGER PRIMARY KEY, "key" VARCHAR(255), "vat" VARCHAR(255), "status" VARCHAR(255), "type" VARCHAR(255), "commentary" VARCHAR(255), "name" VARCHAR(255), "fileName" VARCHAR(255), "filePath" VARCHAR(255), "date" VARCHAR(255), "amount" NUMBER, "commentAdmin" VARCHAR(255), "pct" NUMBER, "email" VARCHAR(255), "createdAt" DATETIME NOT NULL, "updatedAt" DATETIME NOT NULL);
+INSERT INTO Bills VALUES(2,'7to5QJDw6o4XWK9Wsjs7Go','20','accepted','Hôtel et logement','','Hôtel du centre ville','bill-abcde.jpg','public/4b392f446047ced066990b0627cfa444','2021-11-22',120,'',20,'employee@test.tld','2021-11-20 10:53:37.951 +00:00','2024-04-30 15:19:38.816 +00:00');
+INSERT INTO Bills VALUES(3,'d7vVuoPrxhBZog2Nya6oCW','10','accepted','Restaurants et bars','Repas pour la vente','Repas d''affaire','bill-efgh.jpg','public/976fbc50929ab2852a517ff682c603f5','2021-11-22',60,'',20,'employee@test.tld','2021-11-20 10:54:07.116 +00:00','2024-04-30 15:19:45.712 +00:00');
+INSERT INTO Bills VALUES(115,'2WWx5yQyUo4sCDLi9YxGVX','','accepted','Transports','','Test','Capture d''écran 2024-05-16 202640.png','public\d0dac3b020612eaa2b6bd97c62209d34','2024-02-12',26,'',20,'employee@test.tld','2024-05-18 07:55:36.522 +00:00','2024-05-18 07:56:01.447 +00:00');
+INSERT INTO Bills VALUES(116,'cA2hKkApFHMgoNaQdAVAoU','','accepted','Transports','','Deuxieme test','Capture d''écran 2024-05-16 202640.png','public\811300910a7e82c00749ae9ac3dee2f4','2022-04-14',202,'',20,'employee@test.tld','2024-05-22 17:03:04.148 +00:00','2024-05-22 17:15:16.833 +00:00');
+INSERT INTO Bills VALUES(117,'qMQLgLSBsf536q6GV252hj','','refused','Transports','','Test billed n3','Capture d''écran 2024-05-16 202640.png','public\ada33b36bad181b1f7f87ba98ddcb7ac','2024-05-22',199,'',20,'employee@test.tld','2024-05-22 17:17:45.087 +00:00','2024-05-22 17:20:48.144 +00:00');
+INSERT INTO Bills VALUES(118,'s18zZD8ouEjKvkuHfXGhqg','98','accepted','Hôtel et logement','zzz','GG','image_67151361.JPG','public\3088060fb8b42efceb698ae220944a26','1998-02-12',1998,'PAS MAL',12,'employee@test.tld','2024-12-16 16:52:02.859 +00:00','2024-12-16 16:52:49.616 +00:00');
+INSERT INTO sqlite_sequence VALUES('Users',7);
+INSERT INTO sqlite_sequence VALUES('Bills',118);
+COMMIT;
