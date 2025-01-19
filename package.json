@@ -8,9 +8,9 @@
 	"scripts": {
 		"build": "echo 'No build step required'",
 		"test": "NODE_ENV=test sequelize-cli db:migrate && jest test -i tests/user.test.js --watch",
-		"dev": "node app.js",
+		"dev": "npx sequelize-cli db:migrate && node app.js",
 		"lint": "eslint ./",
-		"start": "npm install --force && npx sequelize-cli db:migrate && node app.js"
+		"start": "node app.js"
 	},
 	"dependencies": {
 		"bcrypt": "^5.0.1",
