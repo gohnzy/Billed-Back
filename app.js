@@ -16,12 +16,18 @@ app.use('/public', express.static('public'));
 app.get('/', (req, res) => {
 	res.status(200).send('Bill app backend API v1');
 });
+app.get('/health', (req, res) => {
+	res.status(200).send('OK');
+});
+
 app.use(authMiddleware);
 app.use(upload.single('file'));
 app.use('/auth', authRoute);
 app.use('/users', userRoute);
 app.use('/bills', billRoute);
-const PORT = process.env.PORT || 3000; // Utilise 3000 par défaut en local
+
+// Utiliser le port fourni par l'environnement ou 3000 par défaut
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);

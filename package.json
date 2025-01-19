@@ -8,7 +8,7 @@
 	"scripts": {
 		"build": "echo 'No build step required'",
 		"test": "NODE_ENV=test sequelize-cli db:migrate && jest test -i tests/user.test.js --watch",
-		"dev": "npx sequelize-cli db:migrate && node app.js",
+		"dev": "node app.js",
 		"lint": "eslint ./",
 		"start": "npm install --force && npx sequelize-cli db:migrate && node app.js"
 	},
